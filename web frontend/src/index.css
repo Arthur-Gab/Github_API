@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		font-family: "Roboto", sans-serif;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body,
+	#root {
+		height: 100vh;
+	}
+
+	body {
+		background-color: #e5e6f0;
+	}
+}
+
+@layer components {
+	.user-card-picture {
+		clip-path: circle(40%);
+		width: 5rem;
+	}
+}
