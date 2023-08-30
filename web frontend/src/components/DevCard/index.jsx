@@ -1,7 +1,7 @@
 import { BsXLg } from "react-icons/bs";
 // import Dobberman from "../../assets/doberman.jpg";
 
-export default function UserCard({
+export default function DevCard({
 	name,
 	github_username,
 	bio,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Input from "../../UI/Input";
 import API from "../../services/api";
 
-export default function Form({ onAddDevelopers }) {
+export default function CreateDev({ onAddDevelopers }) {
 	const [github_username, setGithub_username] = useState("");
 	const [techs, setTechs] = useState("");
 	const [latitude, setLatitude] = useState("");

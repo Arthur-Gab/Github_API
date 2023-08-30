@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import UserCard from "./components/UserCard";
+import DevCard from "./components/DevCard";
 import CreateDev from "./components/CreateDev";
 import API from "./services/api";
 
@@ -32,7 +32,7 @@ export default function App() {
 	}
 
 	const DevsList = addDevs.map((dev) => (
-		<UserCard
+		<DevCard
 			key={dev._id}
 			name={dev.name}
 			github_username={dev.github_username}
