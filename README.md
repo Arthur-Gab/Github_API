@@ -7,7 +7,8 @@ Uma aplicação WEB que cadastrar desenvolvedores utilizando da API do Github e 
 3. **A API trabalha junto com a API do Github** para abstrair os demais dados, tais como a bio, a foto do perfil no Github e o link para o site do Github.
 4. **Possui somente 1 porta "/devs"**, pela qual é criado o metódo de criação (store), de remoção (destroy) e de recuperação dos dados (index), os quais são utilizados respectivamente no formulário (CreateDev), no butão "X" do Card (DevCard) e na primeira renderização da página (useEffect ai App.jsx).
 5. A API ainda não possui o metódo de Update (necessário pra completar o CRUD) mas estou planejando incluir ela com uso de um modal para sobrescrever os dados que se deseja mudar - NÂO DESEJO PERMITIR QUE SE MUDE O GITHUB_USERNAME.
-
+6. Caso você baixe o código e tente rodar, infelizmente não vai funcionar porque nas configs do meu Cluster no MondoDB eu coloquei somente meu IP, então você vai ter que criar seu própio Mongo pra testar ou entrar em ctt cmg pra eu permitir que você também acesse.
+   
 ## Pacotes Usados
  ### Back-End
       1. "axios": "^1.5.0",
