@@ -4,7 +4,7 @@
 
 @layer base {
 	:root {
-		font-family: "Roboto", sans-serif;
+		font-family: 'Roboto', sans-serif;
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
@@ -14,11 +14,11 @@
 
 	body,
 	#root {
-		height: 100vh;
+		@apply h-screen flex flex-col;
 	}
 
 	body {
-		background-color: #e5e6f0;
+		@apply bg-[#242424];
 	}
 }
 

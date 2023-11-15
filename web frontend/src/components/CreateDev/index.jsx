@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import Input from "../../UI/Input";
-import API from "../../services/api";
+import { useEffect, useState } from 'react';
+import Input from '../../UI/Input';
+import API from '../../services/api';
 
 export default function CreateDev({ onAddDevelopers }) {
-	const [github_username, setGithub_username] = useState("");
-	const [techs, setTechs] = useState("");
-	const [latitude, setLatitude] = useState("");
-	const [longitude, setLongitude] = useState("");
+	const [github_username, setGithub_username] = useState('');
+	const [techs, setTechs] = useState('');
+	const [latitude, setLatitude] = useState('');
+	const [longitude, setLongitude] = useState('');
 
 	// AutoFill latitude and longitude when rendering
 	useEffect(() => {
@@ -36,12 +36,16 @@ export default function CreateDev({ onAddDevelopers }) {
 			longitude,
 		};
 
-		const response = await API.post("/devs", newDev);
-
-		onAddDevelopers(response.data);
-
-		setGithub_username("");
-		setTechs("");
+		try {
+			const response = await API.post('/devs', newDev);
+			onAddDevelopers(response.data);
+		} catch (err) {
+			console.error('Erro ao adicionar dev:', err.response.data.message);
+		} /*finally {
+			// Limpeza dos campos de entrada, mesmo em caso de erro.
+			setGithub_username('');
+			setTechs('');
+		}*/
 	}
 
 	return (
@@ -50,10 +54,10 @@ export default function CreateDev({ onAddDevelopers }) {
 			<form onSubmit={handleAddDev}>
 				<fieldset className="flex flex-col gap-6 mb-6 text-zinc-500">
 					<Input
-						id={"github_username"}
-						name={"github_username"}
-						type={"text"}
-						content={"Usuário do Github"}
+						id={'github_username'}
+						name={'github_username'}
+						type={'text'}
+						content={'Usuário do Github'}
 						required
 						value={github_username}
 						onChange={(e) => {
@@ -62,10 +66,10 @@ export default function CreateDev({ onAddDevelopers }) {
 					/>
 
 					<Input
-						id={"techs"}
-						name={"techs"}
-						type={"text"}
-						content={"Tecnológias"}
+						id={'techs'}
+						name={'techs'}
+						type={'text'}
+						content={'Tecnológias'}
 						required
 						value={techs}
 						onChange={(e) => {
@@ -75,10 +79,10 @@ export default function CreateDev({ onAddDevelopers }) {
 
 					<div className="flex justify-between gap-8">
 						<Input
-							id={"latitude"}
-							name={"latitude"}
-							type={"number"}
-							content={"Latitude"}
+							id={'latitude'}
+							name={'latitude'}
+							type={'number'}
+							content={'Latitude'}
 							required
 							value={latitude}
 							onChange={(e) => {
@@ -87,10 +91,10 @@ export default function CreateDev({ onAddDevelopers }) {
 						/>
 
 						<Input
-							id={"longitude"}
-							name={"longitude"}
-							type={"number"}
-							content={"Longitude"}
+							id={'longitude'}
+							name={'longitude'}
+							type={'number'}
+							content={'Longitude'}
 							required
 							value={longitude}
 							onChange={(e) => {
