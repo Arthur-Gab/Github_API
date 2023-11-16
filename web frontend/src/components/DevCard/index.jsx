@@ -1,4 +1,4 @@
-import { BsXLg } from "react-icons/bs";
+import { BsXLg } from 'react-icons/bs';
 // import Dobberman from "../../assets/doberman.jpg";
 
 export default function DevCard({
@@ -19,7 +19,7 @@ export default function DevCard({
 				/>
 				<div>
 					<strong className="text-lg">{name}</strong>
-					<p className="text-neutral-700">{techs.join(", ")}</p>
+					<p className="text-neutral-700">{techs.join(', ')}</p>
 				</div>
 			</header>
 			<p
@@ -29,17 +29,10 @@ export default function DevCard({
 			>
 				{bio}
 			</p>
-			<a
-				href={`https://github.com/${github_username}`}
-				target="_blank"
-				className="text-violet-500"
-			>
-				Acessar perfil no Github
-			</a>
-			<div className="absolute z-50 top-0 right-0">
+			<div className="absolute z-30 top-0 right-0">
 				<button
-					aria-label={"Remover dev"}
-					className="p-4 z-50 text-violet-500 hover:bg-violet-200 hover:text-red-600 transition-all duration-300 rounded-full"
+					aria-label={'Remover dev'}
+					className="p-4 z-30 text-violet-500 hover:bg-violet-200 hover:text-red-600 duration-300 rounded-full focus-within:outline focus-within:outline-black focus-within:outline-2"
 					onClick={() => {
 						onRemoveDevelopers(github_username);
 					}}
@@ -52,6 +45,13 @@ export default function DevCard({
 					/>
 				</button>
 			</div>
+			<a
+				href={`https://github.com/${github_username}`}
+				target="_blank"
+				className="text-violet-500 focus-within:outline focus-within:outline-black focus-within:outline-2 rounded"
+			>
+				Acessar perfil no Github
+			</a>
 		</li>
 	);
 }

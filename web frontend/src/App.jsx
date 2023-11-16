@@ -69,7 +69,7 @@ export default function App() {
 				<a
 					href="https://www.linkedin.com/in/art2354/"
 					target="_blank"
-					className="flex justify-center items-center gap-4 text-white"
+					className="flex justify-center items-center gap-4 text-white focus-within:outline focus-within:outline-violet-500 focus-within:outline-2 rounded"
 				>
 					<span>
 						© 2023 Arthur Gabriel & RocketSeat 💜
